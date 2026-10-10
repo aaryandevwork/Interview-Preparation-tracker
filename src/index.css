@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #FBF9F5;
+    --bg-card: #F6F3EC;
+    --bg-input: #FFFFFF;
+    --bg-accent: #F2EDE4;
+    --text-main: #1C1917;
+    --text-muted: #78716C;
+    --text-light: #A8A29E;
+    --border-color: #E7E5E4;
+    --border-hover: #D6D3D1;
+  }
+
+  .dark {
+    --bg-main: #121214;
+    --bg-card: #18181B;
+    --bg-input: #202024;
+    --bg-accent: #27272A;
+    --text-main: #F4F4F5;
+    --text-muted: #A1A1AA;
+    --text-light: #71717A;
+    --border-color: #27272A;
+    --border-hover: #3F3F46;
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
