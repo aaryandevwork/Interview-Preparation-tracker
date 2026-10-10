@@ -1,17 +1,116 @@
-# React + Vite
+# 📖 Interview Practice Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, minimalist web application built to organize, track, and manage technical interview preparation questions. Built with an **Organic Warm Studio & Journal** aesthetic, supporting full dark mode customization, persistent local storage, and flexible search/filter capabilities.
 
-Currently, two official plugins are available:
+**Developed by:** Aaryan
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **🎨 Dynamic Warm Journal Theme:** Includes both Light & Dark modes powered by global CSS variables for seamless switching.
+- **📱 Responsive Layout:** Mobile-optimized card grid view and desktop compact table view with auto-switch layout adjustments.
+- **📊 Real-time Stats Overview:** Automatically calculates overall completion rates and progress breakdowns across DSA, Machine Coding, Git, and Technical categories.
+- **🔍 Multi-criteria Search & Filters:** Search entries by title or notes, and filter dynamically by category, difficulty level, or completion status.
+- **🔄 Instant Status Cycling:** Quick one-click state machine toggling between `Pending` → `In Progress` → `Completed`.
+- **💾 Local Storage Persistence:** Automatically saves and syncs your question journal entries to browser `localStorage`.
+- **✍️ Form Validation:** Integrated with `react-hook-form` for creating and editing practice entries with smooth field validation.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# Interview-Preparation-tracker" 
+## 🛠️ Tech Stack
+
+- **Frontend Library:** React (JS)
+- **Styling:** Tailwind CSS + Global CSS Theme Variables
+- **Form Management:** React Hook Form
+- **Icons:** Lucide React
+
+---
+
+## 📁 Project Architecture
+
+```text
+src/
+├── constants/
+│   └── initialData.js       # Pre-loaded practice questions
+├── components/
+│   ├── Header.jsx           # Top navbar, theme switcher, view controls
+│   ├── StatsOverview.jsx    # Metric overview cards & progress bar
+│   ├── SearchAndFilters.jsx # Query search & drop-down filters
+│   ├── QuestionCard.jsx     # Card view item component
+│   ├── QuestionRow.jsx      # Compact table row component
+│   ├── QuestionModal.jsx    # Form modal for adding/editing questions
+│   └── Footer.jsx           # Custom application footer
+├── App.jsx                  # Main application state & window resize handlers
+├── index.css                # Global CSS variables & Tailwind config
+└── main.jsx                 # Application root entry point
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have **Node.js** (v16 or higher) and **npm** installed.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/interview-practice-tracker.git
+   cd interview-practice-tracker
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Install required icons & form handler:**
+   ```bash
+   npm install lucide-react react-hook-form
+   ```
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🛠️ Configuration & Customization
+
+### Theme Variables (`src/index.css`)
+
+Custom theme colors are declared at the root level using standard CSS variables:
+
+```css
+:root {
+  --bg-main: #FBF9F5;
+  --bg-card: #F6F3EC;
+  --bg-input: #FFFFFF;
+  --text-main: #1C1917;
+  --text-muted: #78716C;
+  --border-color: #E7E5E4;
+}
+
+.dark {
+  --bg-main: #121214;
+  --bg-card: #18181B;
+  --bg-input: #202024;
+  --text-main: #F4F4F5;
+  --text-muted: #A1A1AA;
+  --border-color: #27272A;
+}
+```
+
+---
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+*Crafted for continuous learning & interview success by **Aaryan**.*
