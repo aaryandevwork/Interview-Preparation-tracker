@@ -20,7 +20,6 @@ function App() {
   });
 
   const [viewMode, setViewMode] = useState("grid");
-  console.log(viewMode);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
