@@ -58,8 +58,8 @@ Ensure you have **Node.js** (v16 or higher) and **npm** installed.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/interview-practice-tracker.git
-   cd interview-practice-tracker
+   git clone https://github.com/aaryandevwork/Interview-Preparation-tracker.git
+   cd Interview-Preparation-tracker
    ```
 
 2. **Install dependencies:**
@@ -69,7 +69,7 @@ Ensure you have **Node.js** (v16 or higher) and **npm** installed.
 
 3. **Install required icons & form handler:**
    ```bash
-   npm install lucide-react react-hook-form
+   npm install tailwindcss @tailwindcss/vite lucide-react react-hook-form
    ```
 
 4. **Start the development server:**
