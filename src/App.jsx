@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
-import { INITIAL_QUESTIONS } from "./constants/initialData";
-import { StatsOverview } from "./components/StatsOverview";
-import { QuestionModal } from "./components/QuestionModal";
-import { Header } from "./components/Header";
-import { SearchAndFilters } from "./components/SearchAndFilters";
-import { QuestionCard } from "./components/QuestionCard";
-import { QuestionRow } from "./components/QuestionRow";
+import React, { useState, useEffect } from 'react';
+import { INITIAL_QUESTIONS } from './constants/initialData';
+import { Header } from './components/Header';
+import { StatsOverview } from './components/StatsOverview';
+import { SearchAndFilters } from './components/SearchAndFilters';
+import { QuestionCard } from './components/QuestionCard';
+import { QuestionRow } from './components/QuestionRow';
+import { QuestionModal } from './components/QuestionModal';
+import { Inbox } from 'lucide-react';
 
 function App() {
   const [questions, setQuestions] = useState(() => {
@@ -19,7 +20,6 @@ function App() {
 
   const [viewMode, setViewMode] = useState("grid");
   const [searchQuery, setSearchQuery] = useState("");
-  console.log(searchQuery);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
