@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { INITIAL_QUESTIONS } from './constants/initialData';
-import { Header } from './components/Header';
-import { StatsOverview } from './components/StatsOverview';
-import { SearchAndFilters } from './components/SearchAndFilters';
-import { QuestionCard } from './components/QuestionCard';
-import { QuestionRow } from './components/QuestionRow';
-import { QuestionModal } from './components/QuestionModal';
-import { Inbox } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { INITIAL_QUESTIONS } from "./constants/initialData";
+import { Header } from "./components/Header";
+import { StatsOverview } from "./components/StatsOverview";
+import { SearchAndFilters } from "./components/SearchAndFilters";
+import { QuestionCard } from "./components/QuestionCard";
+import { QuestionRow } from "./components/QuestionRow";
+import { QuestionModal } from "./components/QuestionModal";
+import { Inbox } from "lucide-react";
+import { Footer } from "./components/Footer";
 
 function App() {
   const [questions, setQuestions] = useState(() => {
@@ -19,6 +20,7 @@ function App() {
   });
 
   const [viewMode, setViewMode] = useState("grid");
+  console.log(viewMode);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
@@ -88,12 +90,31 @@ function App() {
     const matchesSearch =
       q.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (q.notes && q.notes.toLowerCase().includes(searchQuery.toLowerCase()));
-    const matchesCategory = selectedCategory ? q.category === selectedCategory : true;
-    const matchesDifficulty = selectedDifficulty ? q.difficulty === selectedDifficulty : true;
+    const matchesCategory = selectedCategory
+      ? q.category === selectedCategory
+      : true;
+    const matchesDifficulty = selectedDifficulty
+      ? q.difficulty === selectedDifficulty
+      : true;
     const matchesStatus = selectedStatus ? q.status === selectedStatus : true;
-    return matchesSearch && matchesCategory && matchesDifficulty && matchesStatus;
+    return (
+      matchesSearch && matchesCategory && matchesDifficulty && matchesStatus
+    );
   });
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setViewMode("grid");
+      }
+    };
+
+    // Run on mount
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div
@@ -215,6 +236,8 @@ function App() {
           editingQuestion={editingQuestion}
         />
       </div>
+
+      <Footer />
     </div>
   );
 }
